@@ -224,3 +224,7 @@ set whichwrap=b,s,h,l,<,>,[,]
 
 " completion
 set ofu=syntaxcomplete#Complete
+
+" enter new line before/after without entering insert mode
+map <S-Enter> O<Esc>
+map <CR> o<Esc>
