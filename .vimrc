@@ -63,7 +63,7 @@ set listchars=tab:▸\ ,eol:¬
 
 set list
 
-colorscheme blackboard
+colorscheme molokai
 
 " expand tabs to 4 spaces by default
 set ts=4 sts=4 sw=4 expandtab "noexpandtab 
@@ -221,3 +221,6 @@ noremap <silent> ,c :<C-B>sil <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<
 noremap <silent> ,u :<C-B>sil <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:noh<CR>
 
 set whichwrap=b,s,h,l,<,>,[,]
+
+" completion
+set ofu=syntaxcomplete#Complete
