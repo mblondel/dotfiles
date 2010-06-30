@@ -1,5 +1,5 @@
 " 256-color terminal
-set t_Co=256 
+set t_Co=256
 
 set encoding=utf-8 " screen
 set fileencoding=utf-8 " file
@@ -57,7 +57,7 @@ let g:netrw_preview=1 " preview window shown in a vertically split
 
 " Use ,l to activate/desactivate list mode
 nmap <leader>l :set list!<CR>
- 
+
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:▸\ ,eol:¬
 
@@ -66,7 +66,7 @@ set list
 colorscheme molokai
 
 " expand tabs to 4 spaces by default
-set ts=4 sts=4 sw=4 expandtab "noexpandtab 
+set ts=4 sts=4 sw=4 expandtab "noexpandtab
 
 " Enable file type detection
 filetype on
@@ -75,22 +75,22 @@ filetype plugin indent on
 
 " Set File type to 'text' for files ending in .txt
 autocmd BufNewFile,BufRead *.txt setfiletype text
- 
+
 autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
 autocmd FileType xml setlocal ts=2 sts=2 sw=2 expandtab
- 
+
 autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
 
-autocmd FileType python setlocal textwidth=80 
+autocmd FileType python setlocal textwidth=80
 autocmd FileType python let b:colors_name="molokai"
-	
-autocmd FileType tex setlocal textwidth=80 
+
+autocmd FileType tex setlocal textwidth=80
 autocmd FileType tex let b:colors_name="zellner"
 
 " Soft wrap for text based
 autocmd FileType text,markdown,html setlocal wrap linebreak nolist
- 
+
 " Treat .rss files as XML
 autocmd BufNewFile,BufRead *.rss setfiletype xml
 
@@ -105,7 +105,7 @@ function! Stab()
   endif
   call SummarizeTabs()
 endfunction
- 
+
 function! SummarizeTabs()
   try
     echohl ModeMsg
@@ -228,3 +228,6 @@ set ofu=syntaxcomplete#Complete
 " enter new line before/after without entering insert mode
 map <S-Enter> O<Esc>
 map <CR> o<Esc>
+
+" save in insert mode
+inoremap <F3> <c-o>:w<cr>
