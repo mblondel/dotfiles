@@ -231,3 +231,14 @@ map <CR> o<Esc>
 
 " save in insert mode
 inoremap <F3> <c-o>:w<cr>
+
+" copy paste to clipboard by default
+noremap  y "+y
+noremap  Y "+Y
+noremap  p "+p
+noremap  P "+P
+vnoremap y "+y
+vnoremap Y "+Y
+vnoremap p "+p
+vnoremap P "+P
+
