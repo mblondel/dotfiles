@@ -234,3 +234,17 @@ inoremap <F3> <c-o>:w<cr>
 
 " toggle NERDTree
 map <F2> :NERDTreeToggle<CR>
+
+" copy paste to clipboard by default
+noremap  y "+y
+noremap  Y "+Y
+noremap  p "+p
+noremap  P "+P
+noremap  x "+x
+noremap  X "+X
+vnoremap y "+y
+vnoremap Y "+Y
+vnoremap p "+p
+vnoremap P "+P
+vnoremap x "+x
+vnoremap X "+X
