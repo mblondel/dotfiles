@@ -231,3 +231,6 @@ map <CR> o<Esc>
 
 " save in insert mode
 inoremap <F3> <c-o>:w<cr>
+
+" toggle NERDTree
+map <F2> :NERDTreeToggle<CR>
