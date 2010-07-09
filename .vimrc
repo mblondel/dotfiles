@@ -20,7 +20,7 @@ set wrap
 set showbreak=…
 
 "set syntax=html
-"set syntax=off
+syntax on
 "
 " Not compatible with vi
 set nocompatible
