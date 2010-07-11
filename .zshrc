@@ -51,8 +51,8 @@ autoload -U compinit
 compinit
 
 # colors
-alias ls='ls --classify --tabsize=0 --literal --color=auto --show-control-chars --human-readable'
-alias grep='grep --color=auto'
+#alias ls='ls --classify --tabsize=0 --literal --color=auto --show-control-chars --human-readable'
+#alias grep='grep --color=auto'
 
 
 #eval `dircolors ~/.dir_colors`
