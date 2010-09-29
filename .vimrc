@@ -26,7 +26,7 @@ syntax on
 set nocompatible
 
 " Use par program for gqip and gwip
-:set formatprg=par\ -w75
+":set formatprg=par\ -w75
 
 " Enable spell checking by pressing ,s
 nmap <silent> <leader>s :set spell!<CR>
@@ -54,6 +54,11 @@ autocmd VimEnter * set vb t_vb=
 let g:netrw_browse_split=4 " Open file in previous buffer
 let g:netrw_preview=1 " preview window shown in a vertically split
 
+" ctrl + arrow keys to switch tab in minbufexp
+let g:miniBufExplMapWindowNavVim = 1
+let g:miniBufExplMapWindowNavArrows = 1
+"let g:miniBufExplMapCTabSwitchBufs = 1
+"let g:miniBufExplModSelTarget = 1 
 
 " Use ,l to activate/desactivate list mode
 nmap <leader>l :set list!<CR>
@@ -78,15 +83,8 @@ autocmd BufNewFile,BufRead *.txt setfiletype text
 
 autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
 autocmd FileType xml setlocal ts=2 sts=2 sw=2 expandtab
-
 autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
-
-autocmd FileType python setlocal textwidth=80
-autocmd FileType python let b:colors_name="molokai"
-
-autocmd FileType tex setlocal textwidth=80
-autocmd FileType tex let b:colors_name="zellner"
 
 " Soft wrap for text based
 autocmd FileType text,markdown,html setlocal wrap linebreak nolist
@@ -235,16 +233,17 @@ inoremap <F3> <c-o>:w<cr>
 " toggle NERDTree
 map <F2> :NERDTreeToggle<CR>
 
-" copy paste to clipboard by default
-noremap  y "+y
-noremap  Y "+Y
-noremap  p "+p
-noremap  P "+P
-noremap  x "+x
-noremap  X "+X
-vnoremap y "+y
-vnoremap Y "+Y
-vnoremap p "+p
-vnoremap P "+P
-vnoremap x "+x
-vnoremap X "+X
+"copy paste to clipboard by default
+"noremap  y "+y
+"noremap  Y "+Y
+"noremap  p "+p
+"noremap  P "+P
+"noremap  x "+x
+"noremap  X "+X
+"vnoremap y "+y
+"vnoremap Y "+Y
+"vnoremap p "+p
+"vnoremap P "+P
+"vnoremap x "+x
+"vnoremap X "+X
+
