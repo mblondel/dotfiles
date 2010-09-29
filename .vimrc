@@ -93,33 +93,7 @@ autocmd FileType text,markdown,html setlocal wrap linebreak nolist
 " Treat .rss files as XML
 autocmd BufNewFile,BufRead *.rss setfiletype xml
 
-" Set tabstop, softtabstop and shiftwidth to the same value
-command! -nargs=* Stab call Stab()
-function! Stab()
-  let l:tabstop = 1 * input('set tabstop = softtabstop = shiftwidth = ')
-  if l:tabstop > 0
-    let &l:sts = l:tabstop
-    let &l:ts = l:tabstop
-    let &l:sw = l:tabstop
-  endif
-  call SummarizeTabs()
-endfunction
-
-function! SummarizeTabs()
-  try
-    echohl ModeMsg
-    echon 'tabstop='.&l:ts
-    echon ' shiftwidth='.&l:sw
-    echon ' softtabstop='.&l:sts
-    if &l:et
-      echon ' expandtab'
-    else
-      echon ' noexpandtab'
-    endif
-  finally
-    echohl None
-  endtry
-endfunction
+let python_highlight_all = 1
 
 function! <SID>StripTrailingWhitespaces()
     " Preparation: save last search, and cursor position.
@@ -223,17 +197,6 @@ au BufEnter *
     \ | if s:new_colors != g:colors_name
         \ | exe 'colors' s:new_colors
     \ | endif
-
-" Specify comment delimiter
-au FileType haskell,ada let b:comment_leader = '-- '
-au FileType vim let b:comment_leader = '" '
-au FileType c,cpp,java let b:comment_leader = '// '
-au FileType sh,make,python,ruby let b:comment_leader = '# '
-au FileType tex let b:comment_leader = '% '
-
-" Comment/Uncomment visual lines with ,c ,u
-noremap <silent> ,c :<C-B>sil <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:noh<CR>
-noremap <silent> ,u :<C-B>sil <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:noh<CR>
 
 set whichwrap=b,s,h,l,<,>,[,]
 
