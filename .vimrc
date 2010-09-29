@@ -227,3 +227,6 @@ map <F2> :NERDTreeToggle<CR>
 "vnoremap x "+x
 "vnoremap X "+X
 
+" ctrl+c, ctrl+v, etc
+"source $VIMRUNTIME/mswin.vim
+
