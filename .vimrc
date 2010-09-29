@@ -1,23 +1,30 @@
 " 256-color terminal
 set t_Co=256
 
+" Encoding
 set encoding=utf-8 " screen
 set fileencoding=utf-8 " file
 set fileencodings=utf-8,euc-jp
 set fileformat=unix
 set fileformats=unix,dos,mac
 
+" Prefix for maps
 let mapleader=','
 
-" Highlight long lines
-"match ErrorMsg '\%>80v.\+'
-
+" Visual
 set number
 set ruler
+set cursorline
 
+" Wrap
 set wrap
-" Symbol shown for linebreak
-set showbreak=…
+set showbreak=… " Symbol shown for linebreak
+set backspace=indent,eol,start " Make backspace wrap lines
+
+" Soft wrap
+"set wrap " break long lines
+"set linebreak " break words
+"set nolist " nolist required
 
 "set syntax=html
 syntax on
@@ -34,11 +41,6 @@ nmap <silent> <leader>s :set spell!<CR>
 set spelllang=en_us
 
 set mouse=a
-
-" Soft wrap
-"set wrap " break long lines
-"set linebreak " break words
-"set nolist " nolist required
 
 " Automatically set unchanged buffers to hidden
 set hidden
@@ -65,7 +67,6 @@ nmap <leader>l :set list!<CR>
 
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:▸\ ,eol:¬
-
 set list
 
 colorscheme molokai
@@ -137,6 +138,22 @@ nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<CR>
 
 " Trip trailing whitespace before save
 autocmd BufWritePre *.py,*.rb,*.c,*.cpp,*.h  :call <SID>StripTrailingWhitespaces()
+
+function! HighlighTooLong()
+    if &textwidth > 0
+        if !exists('w:long_line_match')
+            let w:long_line_match = matchadd('ErrorMsg', '\%>'.&tw.'v.\+', -1)
+        endif
+    else
+        if exists('w:long_line_match')
+            silent! call matchdelete(w:long_line_match)
+            unlet w:long_line_match
+        endif
+    endif
+endfunction
+
+" Highligh
+autocmd BufEnter * :call HighlighTooLong()
 
 map <leader>ew :e <C-R>=expand("%:p:h") . "/" <CR>
 map <leader>es :sp <C-R>=expand("%:p:h") . "/" <CR>

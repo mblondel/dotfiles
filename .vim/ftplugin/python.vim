@@ -8,3 +8,5 @@ setlocal textwidth=79
 setlocal smarttab
 setlocal smartindent
 
+" in Vim 7.3 only... 
+"setlocal colorcolumn=80
