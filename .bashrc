@@ -132,3 +132,8 @@ fi
 if [ -e $projectroot/scikit-learn ] ; then
     export PYTHONPATH=$projectroot/scikit-learn:$PYTHONPATH
 fi
+
+# Custom prompt settings
+[ -r ~/.prompt.sh ] && . ~/.prompt.sh
+
+
