@@ -137,3 +137,5 @@ fi
 [ -r ~/.prompt.sh ] && . ~/.prompt.sh
 
 
+alias sshnobel='ssh -t nobel screen -D -R -S work'
+
