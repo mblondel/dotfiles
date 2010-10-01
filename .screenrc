@@ -6,3 +6,6 @@ defscrollback 30000 # Use a 30000-line scrollback buffer
 
 vbell off
 
+hardstatus alwayslastline
+hardstatus string '%{gk}[ %{G}%H %{g}][%= %{wk}%?%-Lw%?%{=b kR}(%{W}%n*%f %t%?(%u)%?%{=b kR})%{= kw}%?%+Lw%?%?%= %{g}]%{=y C}[%d/%m %c]%{W}'
+
