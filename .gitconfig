@@ -15,6 +15,7 @@ email = mathieu@mblondel.org
 
 [core]
     editor = vim
+    pager = lv -c 
 
 [color]
     branch = auto
