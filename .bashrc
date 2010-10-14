@@ -133,6 +133,11 @@ if [ -e $projectroot/scikit-learn ] ; then
     export PYTHONPATH=$projectroot/scikit-learn:$PYTHONPATH
 fi
 
+
+if [ -e $projectroot/caraml ] ; then
+    export PYTHONPATH=$projectroot/caraml:$PYTHONPATH
+fi
+
 # Custom prompt settings
 [ -r ~/.prompt.sh ] && . ~/.prompt.sh
 
