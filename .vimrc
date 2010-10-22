@@ -111,7 +111,7 @@ endfunction
 nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<CR>
 
 " Trip trailing whitespace before save
-autocmd BufWritePre *.py,*.rb,*.c,*.cpp,*.h  :call <SID>StripTrailingWhitespaces()
+autocmd BufWritePre *.py,*.pyx,*.rb,*.c,*.cpp,*.h  :call <SID>StripTrailingWhitespaces()
 
 function! HighlighTooLong()
     if &textwidth > 0
