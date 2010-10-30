@@ -8,6 +8,9 @@ set fileencodings=utf-8,euc-jp
 set fileformat=unix
 set fileformats=unix,dos,mac
 
+set nobackup
+set noswapfile
+
 " Prefix for maps
 let mapleader=','
 
