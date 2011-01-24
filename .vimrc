@@ -40,7 +40,11 @@ syntax on
 set nocompatible
 
 " Use par program for gqip and gwip
-":set formatprg=par\ -w75
+" use gq to call par
+" use gw to call vim's formatter
+" use gwip to format current paragraph
+:set formatprg=par\ -w75
+:set formatoptions+=t
 
 " Enable spell checking by pressing ,s
 nmap <silent> <leader>s :set spell!<CR>
