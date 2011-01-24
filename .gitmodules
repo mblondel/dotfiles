@@ -19,3 +19,6 @@
 [submodule ".vim/bundle/nerdtree"]
 	path = .vim/bundle/nerdtree
 	url = git://github.com/scrooloose/nerdtree.git
+[submodule ".vim/bundle/mac-classic"]
+	path = .vim/bundle/mac-classic
+	url = https://github.com/nelstrom/vim-mac-classic-theme.git

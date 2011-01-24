@@ -8,4 +8,4 @@ setlocal textwidth=80
 setlocal smarttab
 setlocal smartindent
 
-let b:colors_name="zellner"
+let b:colors_name="mac_classic"
