@@ -1,3 +1,7 @@
+" Pathogen
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
+
 " 256-color terminal
 set t_Co=256
 
