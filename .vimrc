@@ -47,6 +47,8 @@ set nocompatible
 :set formatoptions+=t
 
 " Enable spell checking by pressing ,s
+" ]s to jump to next misspelling
+" z= to list spelling suggestions
 nmap <silent> <leader>s :set spell!<CR>
 
 set spelllang=en_us
