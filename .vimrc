@@ -237,3 +237,4 @@ map <F2> :NERDTreeToggle<CR>
 " ctrl+c, ctrl+v, etc
 "source $VIMRUNTIME/mswin.vim
 
+let g:pep8_map='<F6>' 
