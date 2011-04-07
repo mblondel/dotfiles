@@ -10,10 +10,6 @@
 	path = .vim/bundle/nerdcommenter
 	url = https://github.com/scrooloose/nerdcommenter.git
     ignore = untracked
-[submodule ".vim/bundle/minibufexpl"]
-	path = .vim/bundle/minibufexpl
-	url = git://github.com/fholgado/minibufexpl.vim.git
-    ignore = untracked
 [submodule ".vim/bundle/surround"]
 	path = .vim/bundle/surround
 	url = git://github.com/tpope/vim-surround.git
