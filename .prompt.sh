@@ -100,10 +100,10 @@ case $HOSTNAME in
         TEXT_COLOR="$NORMAL_YELLOW"
         SEP_COLOR="$NORMAL_BLUE"
         ;;
-    #*)
-        #TEXT_COLOR="$NORMAL_MAGENTA"
-        #SEP_COLOR="$NORMAL_BLUE"
-        #;;
+    macbook*)
+        TEXT_COLOR="$NORMAL_MAGENTA"
+        SEP_COLOR="$NORMAL_BLUE"
+        ;;
     #*)
         #TEXT_COLOR="$NORMAL_RED"
         #SEP_COLOR="$NORMAL_BLUE"
