@@ -28,6 +28,10 @@ set wrap
 set showbreak=… " Symbol shown for linebreak
 set backspace=indent,eol,start " Make backspace wrap lines
 
+" Don't yank when deleting stuff.
+nnoremap <leader>d "_d
+vnoremap <leader>d "_d
+
 " Soft wrap
 "set wrap " break long lines
 "set linebreak " break words
