@@ -45,3 +45,24 @@ ZSH_THEME_GIT_PROMPT_CLEAN=""
 local return_status="%{$fg[red]%}%(?..✘)%{$reset_color%}"
 RPROMPT='${return_status}%{$reset_color%}'
 
+export GTK_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+export QT_IM_MODULE=ibus
+
+tegakiroot=$HOME/Desktop/projects/hwr
+
+if [ -e $tegakiroot ] ; then
+    export PYTHONPATH=$tegakiroot/tegaki-python:$tegakiroot/tegaki-pygtk
+fi
+
+projectroot=$HOME/Desktop/projects
+
+if [ -e $projectroot/scikit-learn ] ; then
+    export PYTHONPATH=$projectroot/scikit-learn:$PYTHONPATH
+fi
+
+if [ -e $projectroot/caraml ] ; then
+    export PYTHONPATH=$projectroot/caraml:$PYTHONPATH
+fi
+
+alias sshnobel='ssh -t nobel screen -D -R -S work'
