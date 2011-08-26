@@ -1,61 +1,47 @@
-# never delete files without asking
-alias cp='cp --interactive'
-alias mv='mv --interactive'
-alias rm='rm --interactive'
+# Path to your oh-my-zsh configuration.
+ZSH=$HOME/.oh-my-zsh
 
-# aliases 
-alias ll='ls -l'
-alias la='ls -a'
-alias lla='ls -la'
+# Set name of the theme to load.
+# Look in ~/.oh-my-zsh/themes/
+# Optionally, if you set this to "random", it'll load a random theme each
+# time that oh-my-zsh is loaded.
+ZSH_THEME=""
 
-alias df='df --human-readable'
-alias du='du --human-readable'
+# Set to this to use case-sensitive completion
+# CASE_SENSITIVE="true"
 
-# never beep
-unsetopt beep
-unsetopt hist_beep
-unsetopt list_beep
+# Comment this out to disable weekly auto-update checks
+DISABLE_AUTO_UPDATE="true"
 
-# Ctrl+D equivalent to logout
-unsetopt ignore_eof
+# Uncomment following line if you want to disable colors in ls
+# DISABLE_LS_COLORS="true"
 
-# confirm before rm *
-unsetopt rm_star_silent
+# Uncomment following line if you want to disable autosetting terminal title.
+# DISABLE_AUTO_TITLE="true"
 
-# no speel checking
-setopt nullglob
+# Uncomment following line if you want disable red dots displayed while waiting for completion
+# DISABLE_COMPLETION_WAITING_DOTS="true"
 
-setopt auto_remove_slash
-#unsetopt glob_dots
-setopt chase_links
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Example format: plugins=(rails git textmate ruby lighthouse)
+plugins=(vi-mode)
 
-setopt hist_verify
-# "directoryname" equivalent to "cd directoryname"
-setopt auto_cd
+source $ZSH/oh-my-zsh.sh
 
-setopt auto_pushd
-setopt pushd_ignore_dups
-setopt pushd_silent
-setopt pushd_to_home
+# Customize to your needs...
+#
+#
 
-unsetopt bg_nice
-unsetopt hup
+PROMPT='
+%{$fg[green]%}%n%{$reset_color%} at %{$fg[blue]%}$(hostname -s)%{$reset_color%} in %{$fg[cyan]%}${PWD/#$HOME/~}%{$reset_color%}$(git_prompt_info) 
+$ '
 
-# completion
+ZSH_THEME_GIT_PROMPT_PREFIX=" on %{$fg[magenta]%}"
+ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[green]%}!"
+ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[green]%}?"
+ZSH_THEME_GIT_PROMPT_CLEAN=""
 
-zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}'
-zstyle ':completion:*' max-errors 3 numeric
-zstyle ':completion:*' use-compctl false
+local return_status="%{$fg[red]%}%(?..✘)%{$reset_color%}"
+RPROMPT='${return_status}%{$reset_color%}'
 
-autoload -U compinit
-compinit
-
-# colors
-#alias ls='ls --classify --tabsize=0 --literal --color=auto --show-control-chars --human-readable'
-#alias grep='grep --color=auto'
-
-
-#eval `dircolors ~/.dir_colors`
-
-autoload colors
-colors
