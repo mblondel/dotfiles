@@ -1,0 +1,31 @@
+keysym Alt_L = Mode_switch
+keysym Super_R = Multi_key
+
+keysym q = q Q acircumflex Acircumflex
+keysym e = e E eacute Eacute
+keysym r = r R egrave Egrave
+keysym u = u U ucircumflex Ucircumflex
+keysym i = i I icircumflex Icircumflex
+keysym o = o O ocircumflex Ocircumflex
+keysym a = a A agrave Agrave
+keysym d = d D ediaeresis Ediaeresis
+keysym f = f F ecircumflex Ecircumflex
+keysym h = h H ugrave Ugrave
+keysym j = j J udiaeresis Udiaeresis
+keysym k = k K idiaeresis Idiaeresis
+keysym c = c C ccedilla Ccedilla
+keysym z = z Z guillemotleft
+keysym x = x X guillemotright
+keysym period = period greater U2026
+
+!keysym 5 = 5 percent EuroSign
+!keysym 6  = 6 asciicircum dead_circumflex
+!keysym 7 = 7 ampersand dead_caron dead_breve
+!keysym 0 = 0 parenright dead_abovering
+
+!keysym minus = minus underscore dead_macron U2014
+!keysym semicolon = semicolon colon dead_diaeresis
+!keysym apostrophe = apostrophe quotedbl dead_acute
+!keysym grave = grave asciitilde dead_grave dead_tilde
+!keysym comma = comma less dead_cedilla
+

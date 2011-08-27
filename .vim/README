@@ -1,0 +1,10 @@
+To add a plugin
+
+git submodule add clone-url .vim/bundle/plugin-name
+
+
+To update plugins in bundle:
+
+git submodule init
+git submodule update
+

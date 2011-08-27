@@ -1,3 +1,7 @@
+" Pathogen
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
+
 " 256-color terminal
 set t_Co=256
 
@@ -7,6 +11,9 @@ set fileencoding=utf-8 " file
 set fileencodings=utf-8,euc-jp
 set fileformat=unix
 set fileformats=unix,dos,mac
+
+set nobackup
+set noswapfile
 
 " Prefix for maps
 let mapleader=','
@@ -21,6 +28,10 @@ set wrap
 set showbreak=… " Symbol shown for linebreak
 set backspace=indent,eol,start " Make backspace wrap lines
 
+" Don't yank when deleting stuff.
+nnoremap <leader>d "_d
+vnoremap <leader>d "_d
+
 " Soft wrap
 "set wrap " break long lines
 "set linebreak " break words
@@ -33,9 +44,15 @@ syntax on
 set nocompatible
 
 " Use par program for gqip and gwip
-":set formatprg=par\ -w75
+" use gq to call par
+" use gw to call vim's formatter
+" use gwip to format current paragraph
+:set formatprg=par\ -w75
+:set formatoptions+=t
 
 " Enable spell checking by pressing ,s
+" ]s to jump to next misspelling
+" z= to list spelling suggestions
 nmap <silent> <leader>s :set spell!<CR>
 
 set spelllang=en_us
@@ -111,7 +128,7 @@ endfunction
 nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<CR>
 
 " Trip trailing whitespace before save
-autocmd BufWritePre *.py,*.rb,*.c,*.cpp,*.h  :call <SID>StripTrailingWhitespaces()
+autocmd BufWritePre *.py,*.pyx,*.rb,*.c,*.cc,*.cpp,*.h  :call <SID>StripTrailingWhitespaces()
 
 function! HighlighTooLong()
     if &textwidth > 0
@@ -229,4 +246,8 @@ map <F2> :NERDTreeToggle<CR>
 
 " ctrl+c, ctrl+v, etc
 "source $VIMRUNTIME/mswin.vim
+
+let g:pep8_map='<F4>' 
+
+nnoremap <F6> :GundoToggle<CR>
 
