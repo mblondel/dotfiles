@@ -1,14 +1,14 @@
 [submodule ".vim/bundle/tabular"]
 	path = .vim/bundle/tabular
-	url = https://github.com/godlygeek/tabular.git
+	url = git://github.com/godlygeek/tabular.git
     ignore = untracked
 [submodule ".vim/bundle/fugitive"]
 	path = .vim/bundle/fugitive
-	url = https://github.com/tpope/vim-fugitive.git
+	url = git://github.com/tpope/vim-fugitive.git
     ignore = untracked
 [submodule ".vim/bundle/nerdcommenter"]
 	path = .vim/bundle/nerdcommenter
-	url = https://github.com/scrooloose/nerdcommenter.git
+	url = git://github.com/scrooloose/nerdcommenter.git
     ignore = untracked
 [submodule ".vim/bundle/surround"]
 	path = .vim/bundle/surround
@@ -24,7 +24,7 @@
     ignore = untracked
 [submodule ".vim/bundle/mac-classic"]
 	path = .vim/bundle/mac-classic
-	url = https://github.com/nelstrom/vim-mac-classic-theme.git
+	url = git://github.com/nelstrom/vim-mac-classic-theme.git
     ignore = untracked
 [submodule ".vim/bundle/gundo"]
 	path = .vim/bundle/gundo
