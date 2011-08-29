@@ -32,6 +32,8 @@ source $ZSH/oh-my-zsh.sh
 #
 #
 
+bindkey '^R' history-incremental-search-backward
+
 PROMPT='
 %{$fg[green]%}%n%{$reset_color%} at %{$fg[blue]%}$(hostname -s)%{$reset_color%} in %{$fg[cyan]%}${PWD/#$HOME/~}%{$reset_color%}$(git_prompt_info) 
 $ '
