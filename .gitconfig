@@ -22,3 +22,5 @@ email = mathieu@mblondel.org
     diff = auto
     interactive = auto
     status = auto
+[http]
+	sslverify = false
