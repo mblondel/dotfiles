@@ -114,12 +114,6 @@ let python_highlight_all = 1
 map <S-Enter> O<Esc>
 map <CR> o<Esc>
 
-" NERDTree
-"let g:netrw_liststyle=3 " Use tree-mode as default view
-let g:netrw_browse_split=4 " Open file in previous buffer
-let g:netrw_preview=1 " preview window shown in a vertically split
-nnoremap <leader>n :NERDTreeToggle<CR>
-
 " Function for striping trailing spaces
 function! <SID>StripTrailingWhitespaces()
     " Preparation: save last search, and cursor position.
