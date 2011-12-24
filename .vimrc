@@ -62,8 +62,17 @@ set mouse=a
 " Automatically set unchanged buffers to hidden
 set hidden
 
-" Visual bell only
-"set visualbell
+"folding settings
+" zo: open current fold
+" zO: open current fold and subfolds
+" zR: open all folds
+" zc: close current fold
+" zC: close current fold and subfolds
+" zM: close all folds
+set foldmethod=indent   "fold based on indent
+set foldnestmax=10      "deepest fold is 10 levels
+set nofoldenable        "dont fold by default
+set foldlevel=2         "2 levels by default
 
 " Neither bell nor visual bell
 autocmd VimEnter * set vb t_vb=
