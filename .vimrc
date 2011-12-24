@@ -120,12 +120,6 @@ let g:netrw_browse_split=4 " Open file in previous buffer
 let g:netrw_preview=1 " preview window shown in a vertically split
 nnoremap <leader>n :NERDTreeToggle<CR>
 
-" MiniBufExpl
-let g:miniBufExplMapWindowNavVim = 1
-let g:miniBufExplMapWindowNavArrows = 1
-"let g:miniBufExplMapCTabSwitchBufs = 1
-"let g:miniBufExplModSelTarget = 1
-
 " Function for striping trailing spaces
 function! <SID>StripTrailingWhitespaces()
     " Preparation: save last search, and cursor position.
