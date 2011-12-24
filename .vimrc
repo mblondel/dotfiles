@@ -2,6 +2,9 @@
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
+" Not compatible with vi
+set nocompatible
+
 " 256-color terminal
 set t_Co=256
 
@@ -12,8 +15,10 @@ set fileencodings=utf-8,euc-jp
 set fileformat=unix
 set fileformats=unix,dos,mac
 
+" Temporary files
 set nobackup
 set noswapfile
+set hidden
 
 " Prefix for maps
 let mapleader=','
@@ -22,105 +27,106 @@ let mapleader=','
 set number
 set ruler
 set cursorline
+autocmd VimEnter * set vb t_vb= " neither bell nor visual bell
 
-" Wrap
+" Wrapping
 set wrap
 set showbreak=… " Symbol shown for linebreak
 set backspace=indent,eol,start " Make backspace wrap lines
+set whichwrap=b,s,h,l,<,>,[,]
+"set wrap " break long lines
+"set linebreak " break words
+"set nolist " nolist required
 
 " Don't yank when deleting stuff.
 nnoremap <leader>d "_d
 vnoremap <leader>d "_d
 
-" Soft wrap
-"set wrap " break long lines
-"set linebreak " break words
-"set nolist " nolist required
+" List mode
+"" Use ,l to activate/desactivate list mode
+nmap <leader>l :set list!<CR>
+"" Use the same symbols as TextMate for tabstops and EOLs
+set listchars=tab:▸\ ,eol:¬
+set list
 
-"set syntax=html
-syntax on
-"
-" Not compatible with vi
-set nocompatible
-
-" Use par program for gqip and gwip
-" use gq to call par
-" use gw to call vim's formatter
-" use gwip to format current paragraph
+" Formatting
+"" Use par program for gqip and gwip
+"" use gq to call par
+"" use gw to call vim's formatter
+"" use gwip to format current paragraph
 :set formatprg=par\ -w75
 :set formatoptions+=t
 
-" Enable spell checking by pressing ,s
-" ]s to jump to next misspelling
-" z= to list spelling suggestions
+" Spell checking
+"" Enable spell checking by pressing ,s
+"" ]s to jump to next misspelling
+"" z= to list spelling suggestions
 nmap <silent> <leader>s :set spell!<CR>
-
 set spelllang=en_us
 
+" Mouse
 set mouse=a
 
-" Automatically set unchanged buffers to hidden
-set hidden
-
-"folding settings
-" zo: open current fold
-" zO: open current fold and subfolds
-" zR: open all folds
-" zc: close current fold
-" zC: close current fold and subfolds
-" zM: close all folds
+" Folding
+"" zo: open current fold
+"" zO: open current fold and subfolds
+"" zR: open all folds
+"" zc: close current fold
+"" zC: close current fold and subfolds
+"" zM: close all folds
 set foldmethod=indent   "fold based on indent
 set foldnestmax=10      "deepest fold is 10 levels
 set nofoldenable        "dont fold by default
 set foldlevel=2         "2 levels by default
 
-" Neither bell nor visual bell
-autocmd VimEnter * set vb t_vb=
+" Shortcuts for opening files
+map <leader>ew :e <C-R>=expand("%:p:h") . "/" <CR>
+map <leader>es :sp <C-R>=expand("%:p:h") . "/" <CR>
+map <leader>ev :vsp <C-R>=expand("%:p:h") . "/" <CR>
+map <leader>et :tabe <C-R>=expand("%:p:h") . "/" <CR>
 
-" Built-in file explorer
-"let g:netrw_liststyle=3 " Use tree-mode as default view
-let g:netrw_browse_split=4 " Open file in previous buffer
-let g:netrw_preview=1 " preview window shown in a vertically split
-
-" ctrl + arrow keys to switch tab in minbufexp
-let g:miniBufExplMapWindowNavVim = 1
-let g:miniBufExplMapWindowNavArrows = 1
-"let g:miniBufExplMapCTabSwitchBufs = 1
-"let g:miniBufExplModSelTarget = 1 
-
-" Use ,l to activate/desactivate list mode
-nmap <leader>l :set list!<CR>
-
-" Use the same symbols as TextMate for tabstops and EOLs
-set listchars=tab:▸\ ,eol:¬
-set list
-
+" Color scheme
 colorscheme molokai
 
-" expand tabs to 4 spaces by default
+" Spacing
 set ts=4 sts=4 sw=4 expandtab "noexpandtab
 
-" Enable file type detection
-filetype on
+" Syntax highlighting
+syntax on
 
+filetype on
 filetype plugin indent on
 
-" Set File type to 'text' for files ending in .txt
 autocmd BufNewFile,BufRead *.txt setfiletype text
-
 autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
 autocmd FileType xml setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
-
-" Soft wrap for text based
 autocmd FileType text,markdown,html setlocal wrap linebreak nolist
-
-" Treat .rss files as XML
 autocmd BufNewFile,BufRead *.rss setfiletype xml
+
+set ofu=syntaxcomplete#Complete
 
 let python_highlight_all = 1
 
+" Editing
+"" Enter new line before/after without entering insert mode
+map <S-Enter> O<Esc>
+map <CR> o<Esc>
+
+" NERDTree
+"let g:netrw_liststyle=3 " Use tree-mode as default view
+let g:netrw_browse_split=4 " Open file in previous buffer
+let g:netrw_preview=1 " preview window shown in a vertically split
+nnoremap <leader>n :NERDTreeToggle<CR>
+
+" MiniBufExpl
+let g:miniBufExplMapWindowNavVim = 1
+let g:miniBufExplMapWindowNavArrows = 1
+"let g:miniBufExplMapCTabSwitchBufs = 1
+"let g:miniBufExplModSelTarget = 1
+
+" Function for striping trailing spaces
 function! <SID>StripTrailingWhitespaces()
     " Preparation: save last search, and cursor position.
     let _s=@/
@@ -133,12 +139,13 @@ function! <SID>StripTrailingWhitespaces()
     call cursor(l, c)
 endfunction
 
-" Map command to F5
-nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<CR>
+" ,ss for trailing spaces
+nnoremap <leader>ss :call <SID>StripTrailingWhitespaces()<CR>
 
-" Trip trailing whitespace before save
+" Automatically strip trailing whitespaces before save
 autocmd BufWritePre *.py,*.pyx,*.rb,*.c,*.cc,*.cpp,*.h  :call <SID>StripTrailingWhitespaces()
-
+"
+" Highlight too long lines
 function! HighlighTooLong()
     if &textwidth > 0
         if !exists('w:long_line_match')
@@ -152,32 +159,8 @@ function! HighlighTooLong()
     endif
 endfunction
 
-" Highligh
+" Highligh too long lines when entering buffer
 autocmd BufEnter * :call HighlighTooLong()
-
-map <leader>ew :e <C-R>=expand("%:p:h") . "/" <CR>
-map <leader>es :sp <C-R>=expand("%:p:h") . "/" <CR>
-map <leader>ev :vsp <C-R>=expand("%:p:h") . "/" <CR>
-map <leader>et :tabe <C-R>=expand("%:p:h") . "/" <CR>
-
-"nmap <D-[> <<
-"nmap <D-]> >>
-"vmap <D-[> <gv
-"vmap <D-]> >gv
-
-" Replace C by D for Mac
-map <C-S-]> gt
-map <C-S-[> gT
-map <C-1> 1gt
-map <C-2> 2gt
-map <C-3> 3gt
-map <C-4> 4gt
-map <C-5> 5gt
-map <C-6> 6gt
-map <C-7> 7gt
-map <C-8> 8gt
-map <C-9> 9gt
-map <C-0> :tablast<CR>
 
 " Highligh long lines by typing ,long
 nnoremap <silent> <Leader>long
@@ -189,9 +172,6 @@ nnoremap <silent> <Leader>long
       \ else <Bar>
       \   let w:long_line_match = matchadd('ErrorMsg', '\%>80v.\+', -1) <Bar>
       \ endif<CR>
-
-" Add command Wrap
-command! -nargs=* Wrap set wrap linebreak nolist
 
 
 " Allow for buffers to have different colorschemes
@@ -223,40 +203,3 @@ au BufEnter *
     \ | if s:new_colors != g:colors_name
         \ | exe 'colors' s:new_colors
     \ | endif
-
-set whichwrap=b,s,h,l,<,>,[,]
-
-" completion
-set ofu=syntaxcomplete#Complete
-
-" enter new line before/after without entering insert mode
-map <S-Enter> O<Esc>
-map <CR> o<Esc>
-
-" save in insert mode
-inoremap <F3> <c-o>:w<cr>
-
-" toggle NERDTree
-map <F2> :NERDTreeToggle<CR>
-
-"copy paste to clipboard by default
-"noremap  y "+y
-"noremap  Y "+Y
-"noremap  p "+p
-"noremap  P "+P
-"noremap  x "+x
-"noremap  X "+X
-"vnoremap y "+y
-"vnoremap Y "+Y
-"vnoremap p "+p
-"vnoremap P "+P
-"vnoremap x "+x
-"vnoremap X "+X
-
-" ctrl+c, ctrl+v, etc
-"source $VIMRUNTIME/mswin.vim
-
-let g:pep8_map='<F4>' 
-
-nnoremap <F6> :GundoToggle<CR>
-
