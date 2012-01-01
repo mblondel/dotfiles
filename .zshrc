@@ -51,7 +51,7 @@ export GTK_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
 export QT_IM_MODULE=ibus
 
-tegakiroot=$HOME/Desktop/projects/hwr
+tegakiroot=$HOME/Desktop/projects/tegaki
 
 if [ -e $tegakiroot ] ; then
     export PYTHONPATH=$tegakiroot/tegaki-python:$tegakiroot/tegaki-pygtk
@@ -61,10 +61,6 @@ projectroot=$HOME/Desktop/projects
 
 if [ -e $projectroot/scikit-learn ] ; then
     export PYTHONPATH=$projectroot/scikit-learn:$PYTHONPATH
-fi
-
-if [ -e $projectroot/caraml ] ; then
-    export PYTHONPATH=$projectroot/caraml:$PYTHONPATH
 fi
 
 alias sshnobel='ssh -t nobel screen -D -R -S work'
