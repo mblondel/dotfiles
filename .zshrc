@@ -63,4 +63,8 @@ if [ -e $projectroot/scikit-learn ] ; then
     export PYTHONPATH=$projectroot/scikit-learn:$PYTHONPATH
 fi
 
+if [ -e $projectroot/lightning ] ; then
+    export PYTHONPATH=$projectroot/lightning:$PYTHONPATH
+fi
+
 alias sshnobel='ssh -t nobel screen -D -R -S work'
