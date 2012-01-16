@@ -131,7 +131,7 @@ endfunction
 nnoremap <leader>ss :call <SID>StripTrailingWhitespaces()<CR>
 
 " Automatically strip trailing whitespaces before save
-autocmd BufWritePre *.py,*.pyx,*.rb,*.c,*.cc,*.cpp,*.h  :call <SID>StripTrailingWhitespaces()
+autocmd BufWritePre *.py,*.pyx,*.rb,*.c,*.cc,*.cpp,*.h,*.rst  :call <SID>StripTrailingWhitespaces()
 "
 " Highlight too long lines
 function! HighlighTooLong()
