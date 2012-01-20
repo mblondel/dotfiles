@@ -86,7 +86,7 @@ map <leader>ev :vsp <C-R>=expand("%:p:h") . "/" <CR>
 map <leader>et :tabe <C-R>=expand("%:p:h") . "/" <CR>
 
 " Color scheme
-colorscheme molokai
+colorscheme jellybeans
 
 " Spacing
 set ts=4 sts=4 sw=4 expandtab "noexpandtab
