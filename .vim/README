@@ -1,3 +1,6 @@
+Add plugin
+===========
+
 To add a plugin:
 
 git submodule add clone-url .vim/bundle/plugin-name
@@ -10,3 +13,47 @@ git submodule update
 To sync the submodules when .gitmodules was edited:
 
 git submodule sync
+
+Vim memo
+========
+
+Movements
+---------
+
+Slow movement: h, j, k and l
+Line beginning: 0
+Line terminus: $
+First character: ^
+Next beginning of word: w and W
+Next end of word: e and E
+Previous beginning of word: b and B
+Previous end of word: ge and gE
+Move to specific character: f, F, t and T
+
+Full page up and down: ctrl-b and ctrl-f
+Half page up and down: ctrl-u and ctrl-d
+
+Head, Middle and Last of the screen: H, M and L
+
+Previous and Next function: [[ and ]]
+
+Matching paired characters: %
+
+Movements can be prefixed by a number
+
+Editing
+-------
+
+Insert with new line: o and O
+Change thing: c and C (followed by movement)
+
+Joining lines: J and gJ
+Replacing: r and R
+
+Windows
+-------
+
+Opening: :split and :vsplit
+Closing: :close
+Switching: ctrl-w + movement
+Previous: ctrl-w + p
