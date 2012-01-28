@@ -41,6 +41,16 @@ Matching paired characters: %
 
 Movements can be prefixed by a number
 
+Selecting
+---------
+
+vi<: select text inside < and >
+va<: selecting text including < and >
+
+vip: select paragraph
+vis: select sentence
+v2ap: select 2 paragraphs
+
 Editing
 -------
 
