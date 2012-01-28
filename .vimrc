@@ -42,6 +42,10 @@ set whichwrap=b,s,h,l,<,>,[,]
 nnoremap <leader>d "_d
 vnoremap <leader>d "_d
 
+" Search
+set nohlsearch
+nmap <silent> <leader>h :set hlsearch!<CR>
+
 " List mode
 "" Use ,l to activate/desactivate list mode
 nmap <leader>l :set list!<CR>
