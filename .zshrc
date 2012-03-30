@@ -68,3 +68,7 @@ if [ -e $projectroot/lightning ] ; then
 fi
 
 alias sshnobel='ssh -t nobel screen -D -R -S work'
+alias sshniagara='ssh -t niagara screen -D -R -S work'
+alias sshphoenix='ssh -t phoenix screen -D -R -S work'
+alias sshendevour='ssh -t endevour screen -D -R -S work'
+alias sshsarajevo='ssh -t sarajevo screen -D -R -S work'
