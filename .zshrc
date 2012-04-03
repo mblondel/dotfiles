@@ -67,6 +67,10 @@ if [ -e $projectroot/lightning ] ; then
     export PYTHONPATH=$projectroot/lightning:$PYTHONPATH
 fi
 
+if [ -e $projectroot/svmlight-loader ] ; then
+    export PYTHONPATH=$projectroot/svmlight-loader:$PYTHONPATH
+fi
+
 alias sshnobel='ssh -t nobel screen -D -R -S work'
 alias sshniagara='ssh -t niagara screen -D -R -S work'
 alias sshphoenix='ssh -t phoenix screen -D -R -S work'
