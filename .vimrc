@@ -29,6 +29,10 @@ set ruler
 set cursorline
 autocmd VimEnter * set vb t_vb= " neither bell nor visual bell
 
+" File completion
+set wildmode=longest,list,full
+"set wildmenu
+
 " Wrapping
 set wrap
 set showbreak=… " Symbol shown for linebreak
