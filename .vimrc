@@ -106,6 +106,7 @@ filetype on
 filetype plugin indent on
 
 autocmd BufNewFile,BufRead *.txt setfiletype text
+autocmd FileType cpp setlocal ts=4 sts=4 sw=4 expandtab
 autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
 autocmd FileType xml setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
