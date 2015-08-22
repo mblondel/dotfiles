@@ -76,3 +76,6 @@ alias sshniagara='ssh -t niagara screen -D -R -S work'
 alias sshphoenix='ssh -t phoenix screen -D -R -S work'
 alias sshendevour='ssh -t endevour screen -D -R -S work'
 alias sshsarajevo='ssh -t sarajevo screen -D -R -S work'
+
+alias pylab="ipython --pylab --no-confirm-exit"
+alias pylabqt="ipython qtconsole --pylab=inline --no-confirm-exit"
