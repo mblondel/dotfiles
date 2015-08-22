@@ -79,3 +79,5 @@ alias sshsarajevo='ssh -t sarajevo screen -D -R -S work'
 
 alias pylab="ipython --pylab --no-confirm-exit"
 alias pylabqt="ipython qtconsole --pylab=inline --no-confirm-exit"
+
+export PATH=$HOME/anaconda/bin:$PATH
