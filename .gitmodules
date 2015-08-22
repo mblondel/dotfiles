@@ -22,9 +22,6 @@
 	path = .vim/bundle/mac-classic
 	url = https://github.com/nelstrom/vim-mac-classic-theme.git
     ignore = untracked
-[submodule ".vim/bundle/gundo"]
-	path = .vim/bundle/gundo
-	url = https://github.com/sjl/gundo.vim.git
 [submodule ".vim/bundle/vim-colors-solarized"]
 	path = .vim/bundle/vim-colors-solarized
 	url = https://github.com/altercation/vim-colors-solarized.git
