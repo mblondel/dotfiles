@@ -1,0 +1,6 @@
+Useful commands
+---------------
+
+- Enable automatic reload *without* confirmation in Skim:
+
+$ defaults write -app Skim SKAutoReloadFileUpdate -boolean true 
