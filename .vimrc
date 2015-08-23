@@ -22,6 +22,7 @@ set hidden
 
 " Prefix for maps
 let mapleader=','
+let maplocalleader=','
 
 " Visual
 set number
@@ -166,3 +167,19 @@ nnoremap <silent> <Leader>long
 
 " Remap ctrl+x ctrl+o (omnicompletion) to ctrl+f
 inoremap <c-f> <c-x><c-o>
+
+" vimtex options
+
+" Compilation with latexmk
+let g:vimtex_latexmk_enabled = 1
+let g:vimtex_latexmk_continuous = 1
+let g:vimtex_latexmk_callback = 0
+
+" Folding
+let g:vimtex_fold_enabled = 1
+let g:vimtex_fold_envs = 0  " Don't fold equations, theorems, etc.
+
+" Use Skim as viewer.
+let g:vimtex_view_general_viewer
+    \ = '/Applications/Skim.app/Contents/SharedSupport/displayline'
+let g:vimtex_view_general_options = '@line @pdf @tex'
