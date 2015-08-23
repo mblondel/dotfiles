@@ -164,3 +164,5 @@ nnoremap <silent> <Leader>long
       \   let w:long_line_match = matchadd('ErrorMsg', '\%>80v.\+', -1) <Bar>
       \ endif<CR>
 
+" Remap ctrl+x ctrl+o (omnicompletion) to ctrl+f
+inoremap <c-f> <c-x><c-o>
