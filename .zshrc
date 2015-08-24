@@ -51,6 +51,9 @@ export GTK_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
 export QT_IM_MODULE=ibus
 
+
+# PYTHONPATH changes.
+
 tegakiroot=$HOME/Desktop/projects/tegaki
 
 if [ -e $tegakiroot ] ; then
@@ -79,7 +82,14 @@ if [ -e $projectroot/spira ] ; then
     export PYTHONPATH=$projectroot/spira:$PYTHONPATH
 fi
 
+# IPython.
 alias pylab="ipython --pylab --no-confirm-exit"
 alias pylabqt="ipython qtconsole --pylab=inline --no-confirm-exit"
 
+# Anaconda.
 export PATH=$HOME/anaconda/bin:$PATH
+
+# Extra config.
+if [ -e $HOME/.zsh_extra ] ; then
+    source $HOME/.zsh_extra
+fi
