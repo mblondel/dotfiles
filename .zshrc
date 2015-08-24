@@ -71,6 +71,14 @@ if [ -e $projectroot/svmlight-loader ] ; then
     export PYTHONPATH=$projectroot/svmlight-loader:$PYTHONPATH
 fi
 
+if [ -e $projectroot/ivalice ] ; then
+    export PYTHONPATH=$projectroot/ivalice:$PYTHONPATH
+fi
+
+if [ -e $projectroot/spira ] ; then
+    export PYTHONPATH=$projectroot/spira:$PYTHONPATH
+fi
+
 alias pylab="ipython --pylab --no-confirm-exit"
 alias pylabqt="ipython qtconsole --pylab=inline --no-confirm-exit"
 
