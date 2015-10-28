@@ -87,3 +87,17 @@ zR: open all folds
 zc: close current fold
 zC: close current fold and subfolds
 zM: close all folds
+
+Spell
+=====
+
+Download:
+wget http://ftp.vim.org/vim/runtime/spell/fr.latin1.spl
+wget http://ftp.vim.org/vim/runtime/spell/fr.latin1.sug
+wget http://ftp.vim.org/vim/runtime/spell/fr.utf-8.spl
+wget http://ftp.vim.org/vim/runtime/spell/fr.utf-8.sug
+
+Move the files to .vim/spell/
+
+Then
+:set spelllang=fr spell
