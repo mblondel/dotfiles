@@ -93,3 +93,6 @@ export PATH=$HOME/anaconda/bin:$PATH
 if [ -e $HOME/.zsh_extra ] ; then
     source $HOME/.zsh_extra
 fi
+
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
