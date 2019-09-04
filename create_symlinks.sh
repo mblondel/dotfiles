@@ -8,4 +8,5 @@ done
 rm -rf $HOME/.git
 rm -f $HOME/.gitmodules
 rm -f $HOME/.ssh/config
+mkdir -p .ssh
 ln -s $CURRDIR/.ssh/config $HOME/.ssh/config 
