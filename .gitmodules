@@ -22,3 +22,6 @@
 [submodule ".vim/bundle/vimtex"]
 	path = .vim/bundle/vimtex
 	url = https://github.com/lervag/vimtex.git
+[submodule ".vim/bundle/lucius"]
+	path = .vim/bundle/lucius
+	url = https://github.com/jonathanfilip/vim-lucius.git

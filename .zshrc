@@ -87,7 +87,7 @@ alias pylab="ipython --pylab --no-confirm-exit"
 alias pylabqt="ipython qtconsole --pylab=inline --no-confirm-exit"
 
 # Anaconda.
-export PATH=$HOME/anaconda/bin:$PATH
+export PATH=$HOME/anaconda3/bin:$PATH
 
 # Extra config.
 if [ -e $HOME/.zsh_extra ] ; then

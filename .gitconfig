@@ -1,6 +1,6 @@
 [user]
 name = Mathieu Blondel
-email = mathieu@mblondel.org
+email = mblondel@google.com
 
 [alias]
     ci = commit -a

@@ -88,9 +88,6 @@ map <leader>es :sp <C-R>=expand("%:p:h") . "/" <CR>
 map <leader>ev :vsp <C-R>=expand("%:p:h") . "/" <CR>
 map <leader>et :tabe <C-R>=expand("%:p:h") . "/" <CR>
 
-" Color scheme
-colorscheme jellybeans
-
 " Spacing
 set ts=4 sts=4 sw=4 expandtab "noexpandtab
 
@@ -186,3 +183,7 @@ let g:vimtex_view_general_options = '@line @pdf @tex'
 
 " Modeline
 set modeline
+
+" Color scheme
+colorscheme lucius
+set background=dark
